@@ -1,0 +1,22 @@
+{% include 'weixin/base.html' %}
+
+
+{% block content %}
+<form action="/weixin/add_student/" class="student_form" method="POST">
+    {% csrf_token %}
+   
+    {% for field in form %}
+        {{ field }}
+        {% for error in field.errors %}
+            {{ error }}
+        {% endfor %}
+
+        {{ field.help_text }}
+        
+    {% endfor %}
+    <input type="submit" name="submit" value="add_student">
+
+</form>
+
+
+{% endblock %}

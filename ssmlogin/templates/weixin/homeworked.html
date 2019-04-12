@@ -1,0 +1,243 @@
+{% load static %}
+
+
+
+<!doctype html>
+<html>
+
+<head>
+
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+  <meta http-equiv="description" content="This is my page">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/table.css">
+
+
+  <title>已提交作业列表</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <style type="text/css">
+    body {
+      font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica", "sans-serif";
+      font-size: 12pt;
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+
+    p {
+      font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica", "sans-serif";
+      font-size: 12pt;
+    }
+
+    a:link {
+      color: #0000FF;
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #FF0033;
+      text-decoration: none;
+    }
+
+    td {
+      font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica", "sans-serif";
+      font-size: 10pt;
+    }
+
+    .CompanyName {
+      font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica", "sans-serif";
+      font-size: 20pt;
+      color: #8d6e63;
+    }
+  </style>
+</head>
+
+<body bgColor=#ffffff>
+
+  <DIV align=center>
+
+  
+
+    <TABLE style="border-bottom:1px solid #e6ee9c;width:80%;padding:0;border-collapse:collapse;border-spacing:0;">
+      <TR>
+        <TD height=50>
+          <DIV align=center class="CompanyName"><B>SSM技术在微信签到中的应用</B></DIV>
+        </TD>
+        <TD vAlign=bottom>
+          <DIV align=right><B>
+              <FONT size=2 color="#f45">请点击头像签到</FONT>
+            </B></DIV>
+        </TD>
+      </TR>
+    </TABLE>
+  </DIV>
+  <TABLE style="width:80%;border:none;padding:0;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+    <TR>
+      <TD colSpan=2 vAlign=top style="padding-top:20px; padding-bottom:20px;">
+        <!-- 主页面内容 BEIN -->
+
+        <form name="form1" enctype="multipart/form-data" action="assignment.action" method="post">
+          本次课程已提交作业列表
+          <table width="80%" class="mytable" border="1px">
+            <thead>
+              <tr>
+                <th>编号</th>
+                <th>提交人</th>
+                <th>说明</th>
+                <th>文件路径</th>
+                <th>提交时间</th>
+
+              </tr>
+              <tr>
+                <th>181164336</th>
+                <th>王舒蕾</th>
+                <th>数据结构 课程设计</th>
+                <th>c:/upload</th>
+                <th>2018-12-01 12:34:12</th>
+              </tr>
+              <tr>
+              <tr>
+                <th>181164450</th>
+                <th>刘坤</th>
+                <th>数据结构 课程设计</th>
+                <th>c:/upload</th>
+                <th>2018-12-01 12:34:12</th>
+              </tr>
+              <tr>
+                  <th>181164551</th>
+                  <th>李云龙</th>
+                  <th>java JSP大作业</th>
+                  <th>c:/upload</th>
+                  <th>2018-04-12 12:34:12</th>
+                </tr>
+              <tr>
+                <th>181164508</th>
+                <th>王清</th>
+                <th>java JSP大作业</th>
+                <th>c:/upload</th>
+                <th>2018-04-12 12:34:12</th>
+              </tr>
+                {% for i in homeworked_list %}
+                <tr>
+                    <th>{{ i.id  }}</th>
+                    <th>{{ i.name }}</th>
+                    <th>{{ i.homework_name }}</th>
+                    <th>{{ i.path  }}</th>
+                    <th>{{ i.time }}</th>
+                  </tr>
+                {% endfor %}
+            </thead>
+
+          </table>
+        </form>
+
+        <!-- 主页面内容 END -->
+      </TD>
+      <TD bgColor=#e6ee9c vAlign=top width=1 style="padding:0;"></TD>
+      <TD bgColor=#ffffff vAlign=top width=135>
+        <DIV align=right>
+          <P align=center><B>
+              <FONT color=#ff0000 size=3><BR>Welcome!</FONT>
+            </B></P>
+          <P align=center><B>
+              <FONT color=#ff0000><IMG height=100 src="{% static 'signin/logo.jpg' %}" width=100></FONT>
+            </B> </P>
+          <table style="width:100%;border:none;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+            <tbody>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav1"><b><a href="/signin">
+                        <font color="#ff9c00">课堂点名</font>
+                      </a></b></div>
+                </td>
+              </tr>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav1"><b><a href="/count_signin">
+                        <font color="#ff9c00">考勤统计</font>
+                      </a></b></div>
+                </td>
+              </tr>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav1"><b><a href="/signin">
+                        <font color="#ffad00">座位管理</font>
+                      </a></b></div>
+                </td>
+              </tr>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav1"><b><a href="/signin">
+                        <font color="#ffad00">签到管理</font>
+                      </a></b></div>
+                </td>
+              </tr>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav1"><b><a href="/homeworked">
+                        <font color="#ff9c00">提交作业</font>
+                      </a></b></div>
+                </td>
+              </tr>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav0 nav1"><b><a href="#">
+                        <font color="#ff9c00">作业统计</font>
+                      </a></b></div>
+                </td>
+              </tr>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav0 nav1"><b><a href="#">
+                        <font color="#ff9c00">平时成绩</font>
+                      </a></b></div>
+                </td>
+              </tr>
+              <tr>
+                <td height="25" width="20%"></td>
+                <td>
+                  <div align="center" class="nav1"><b><a href="/get_task">
+                        <font color="#ff5500">领取任务</font>
+                      </a></b></div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </DIV>
+      </TD>
+    </TR>
+    <TR vAlign=top>
+      <TD colSpan=4>
+        <DIV align=right style="border-top:1px solid #e6ee9c;">
+
+        </DIV>
+        <DIV align=right>
+          <DIV align=center style="height:40px;line-height:40px;">
+            <FONT color=#78909c face="Consolas,Arial, Helvetica, sans-serif" size=2>&copy;Copyright 2018-2019 All rights
+              reserved.</FONT>
+            <FONT color=#3169a5> </FONT><BR>
+          </DIV>
+        </DIV>
+      </TD>
+    </TR>
+  </TABLE>
+</body>
+
+</html>

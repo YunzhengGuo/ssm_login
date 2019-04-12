@@ -1,0 +1,823 @@
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+
+    <base href="http://localhost:8000/signin/">
+    
+    
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/table.css">
+  	<script>
+  		function selectTask(id){
+  			if(confirm("你确定要选择该课程吗？(点击确定后不可更改!)")){
+  				document.form1.taskId.value=id;
+  				document.form1.submit();
+  			}
+  		}
+  	</script>
+  
+<title>领取任务</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style type="text/css">
+	body {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 12pt;
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+	}
+	p {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 12pt;
+	}
+	a:link {
+		color: #0000FF;
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		color: #FF0033;
+		text-decoration: none;
+	}
+	td {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 10pt;
+	}
+	.CompanyName {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 20pt;
+		color:#8d6e63;
+	}
+</style>
+</head>
+<body bgColor=#ffffff>
+
+<DIV align=center>
+
+<!-- 
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="80%">
+  <TR>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="3%">&nbsp;</TD>
+    <TD bgColor=#006500 width="2%">&nbsp;</TD>
+    <TD width="5%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD bgColor=#ce3000 width="2%">&nbsp;</TD>
+    <TD width="11%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="5%">&nbsp;</TD>
+    <TD bgColor=#ff9a00 width="2%">&nbsp;</TD>
+    <TD width="7%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="16%">&nbsp;</TD>
+    <TD bgColor=#00a200 width="2%">&nbsp;</TD>
+    <TD width="12%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="16%">&nbsp;</TD>
+    <TD bgColor=#006500 width="3%">&nbsp;</TD>
+  </TR>
+</TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="80%">
+  <TR>
+    <TD bgColor=#006600 height=13 rowSpan=2 width="19%">&nbsp;</TD>
+    <TD bgColor=#ce3000 rowSpan=2 width="8%">&nbsp;</TD>
+    <TD bgColor=#ff9900 height=13 rowSpan=2 width="15%">&nbsp;</TD>
+    <TD bgColor=#949231 height=13 rowSpan=2 width="14%">&nbsp;</TD>
+    <TD bgColor=#00a200 height=13 rowSpan=2 width="44%">&nbsp;</TD>
+  </TR>
+  <TR></TR>
+</TABLE> 
+-->
+
+<TABLE style="border-bottom:1px solid #e6ee9c;width:80%;padding:0;border-collapse:collapse;border-spacing:0;">
+  <TR>
+    <TD height=50><DIV align=center class="CompanyName"><B>SSM技术在微信签到中的应用</B></DIV></TD>
+    <TD vAlign=bottom><DIV align=right><B><FONT size=2 color="#f45">请点击头像签到</FONT></B></DIV></TD>
+  </TR>
+</TABLE>
+</DIV>
+<TABLE style="width:80%;border:none;padding:0;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+  <TR>
+    <TD colSpan=2 vAlign=top style="padding-top:20px; padding-bottom:20px;">
+<!-- 主页面内容 BEIN -->
+		
+  	<form name="form1" action="confirmtask.action" method="post">
+  		<input type="hidden" name="taskId"/>
+  	    <table class="mytable">
+    	<caption>从列表中选择一个任务</caption>
+    	<tr>
+    		<th width="10">编号</th>
+    		<th width="50">题目</th>
+    		<th width="80">内容</th>
+    		<th width="100"><!-- 教程网址 -->题目下载地址</th>
+    		<th width="20">选择该任务的学生</th>
+    	</tr>
+    	
+    		<tr >
+    			<td>1</td>
+    			<td>CSS3 Transform学习</td>
+    			<td>CSS3 Transform属性教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/content/css3-transform">
+    				http://www.w3cplus.com/content/css3-transform
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					韩文瑾
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>2</td>
+    			<td>CSS3 Gradient学习</td>
+    			<td>CSS3 Gradient属性教程：制作渐变图片</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/content/css3-gradient">
+    				http://www.w3cplus.com/content/css3-gradient
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					代继强
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>3</td>
+    			<td>CSS3 Ribbons制作</td>
+    			<td>CSS3 Ribbons效果制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/css3/css3-ribbons">
+    				http://www.w3cplus.com/css3/css3-ribbons
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王晖
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>4</td>
+    			<td>CSS3 制作文字特效</td>
+    			<td>CSS3 制作文字特效教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/css3/text-effect">
+    				http://www.w3cplus.com/css3/text-effect
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					陈高升
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>5</td>
+    			<td>CSS3制作超酷的SearchBox</td>
+    			<td>CSS3制作超酷的SearchBox教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/css3/create-search-box-with-css3-and-html5">
+    				http://www.w3cplus.com/css3/create-search-box-with-css3-and-html5
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					黄鹏程
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>6</td>
+    			<td>CSS3美化有序列表</td>
+    			<td>CSS3美化有序列表教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/css3/css3-ordered-list-styles">
+    				http://www.w3cplus.com/css3/css3-ordered-list-styles
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王思媛
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>7</td>
+    			<td>CSS3制作表单动态帮助信息</td>
+    			<td>CSS3制作表单动态帮助信息教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/css3/pure-css3-create-sliding-form-helps">
+    				http://www.w3cplus.com/css3/pure-css3-create-sliding-form-helps
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王清
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>8</td>
+    			<td>CSS3制作Breadcrumbs</td>
+    			<td>CSS3制作Breadcrumbs教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/css3/css3-breadcrumbs">
+    				http://www.w3cplus.com/css3/css3-breadcrumbs
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					温朴源
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>9</td>
+    			<td>纯CSS3制作Tabs选项卡</td>
+    			<td>纯CSS3制作Tabs选项卡教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/css3/pure-css3-create-tabs">
+    				http://www.w3cplus.com/css3/pure-css3-create-tabs
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					刘白超
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>10</td>
+    			<td>CSS3制作价格表</td>
+    			<td>CSS3制作价格表的案例教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/724.html">
+    				http://www.w3cplus.com/demo/724.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					路越
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>11</td>
+    			<td>CSS3制作迷你播放器面板</td>
+    			<td>CSS3制作迷你播放器面板教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/720.html">
+    				http://www.w3cplus.com/demo/720.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王艳敬
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>12</td>
+    			<td>太棒了！mask 轻松构建炫酷CSS探照特效！</td>
+    			<td>操作四个图片遮罩层 mask实现动画探照灯效果</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/681.html">
+    				http://www.w3cplus.com/demo/681.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					郑鹏涛
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>13</td>
+    			<td>CSS3制作登录表单</td>
+    			<td>CSS3制作漂亮风格的登录表单教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/648.html">
+    				http://www.w3cplus.com/demo/648.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					胡泊
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>14</td>
+    			<td>CSS3制作莲花开放</td>
+    			<td>CSS3制作莲花开放效果</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/623.html">
+    				http://www.w3cplus.com/demo/623.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					陈歆宇
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>15</td>
+    			<td>用CSS3进行Toolbar Menu的制作</td>
+    			<td>Toolbar Menu的制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/590.html">
+    				http://www.w3cplus.com/demo/590.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					乔俊磊
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>16</td>
+    			<td>CSS3制作下拉菜单</td>
+    			<td>CSS3制作下拉菜单教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/576.html">
+    				http://www.w3cplus.com/demo/576.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					刘晓娟
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>17</td>
+    			<td>Pure CSS3 Circle Menu效果</td>
+    			<td>Pure CSS3 Circle Menu效果教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/574.html">
+    				http://www.w3cplus.com/demo/574.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					罗兵兵
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>18</td>
+    			<td>CSS3写的文字发光和动画的案例</td>
+    			<td>CSS3写的文字发光和动画的案例教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/565.html">
+    				http://www.w3cplus.com/demo/565.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					刘超超
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>19</td>
+    			<td>CSS3 Animation Breadcrumbs效果</td>
+    			<td>CSS3 Animation Breadcrumbs教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/559.html">
+    				http://www.w3cplus.com/demo/559.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					于富江
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>20</td>
+    			<td>Pure CSS3 Lavalamp Menu菜单</td>
+    			<td>Pure CSS3 Lavalamp Menu菜单效果教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/544.html">
+    				http://www.w3cplus.com/demo/544.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王可
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>21</td>
+    			<td>Pure CSS3 Accordion Slider效果</td>
+    			<td>Pure CSS3 Accordion Slider效果制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/543.html">
+    				http://www.w3cplus.com/demo/543.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王永建
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>22</td>
+    			<td>CSS3制作手风琴菜单</td>
+    			<td>CSS3制作手风琴菜单教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/542.html">
+    				http://www.w3cplus.com/demo/542.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					陈超
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>23</td>
+    			<td>CSS3 Full Background Slider效果制作</td>
+    			<td>CSS3 Full Background Slider效果教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/529.html">
+    				http://www.w3cplus.com/demo/529.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					陈家辉
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>24</td>
+    			<td>Pure CSS3 Animation Menu效果</td>
+    			<td>Pure CSS3 Animation Menu菜单效果教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/518.html">
+    				http://www.w3cplus.com/demo/518.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					高畅
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>25</td>
+    			<td>CSS3制作秒表</td>
+    			<td>CSS3制作秒表教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/517.html">
+    				http://www.w3cplus.com/demo/517.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					侯星宇
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>26</td>
+    			<td>CSS3 Letter动态展开</td>
+    			<td>CSS3 Letter动态展开效果教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/514.html">
+    				http://www.w3cplus.com/demo/514.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王舒蕾
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>27</td>
+    			<td>Pure CSS3 3D Buttons按钮制作</td>
+    			<td>Pure CSS3 3D Buttons按钮制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/501.html">
+    				http://www.w3cplus.com/demo/501.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					何琳琳
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>28</td>
+    			<td>Codrops CSS3 Lightbox 3效果制作</td>
+    			<td>Codrops CSS3 Lightbox 3效果制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/499.html">
+    				http://www.w3cplus.com/demo/499.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					张如玉
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>29</td>
+    			<td>Codrops CSS3 Lightbox 2效果制作</td>
+    			<td>Codrops CSS3 Lightbox 2效果制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/494.html">
+    				http://www.w3cplus.com/demo/494.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					申明可
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>30</td>
+    			<td>Codrops CSS3 Lightbox效果制作</td>
+    			<td>Codrops CSS3 Lightbox效果制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/492.html">
+    				http://www.w3cplus.com/demo/492.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					高俊凯
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>31</td>
+    			<td>CSS3制作Lightbox效果</td>
+    			<td>CSS3制作Lightbox效果制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/486.html">
+    				http://www.w3cplus.com/demo/486.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					陈硕
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>32</td>
+    			<td>CSS3制作3D表单</td>
+    			<td>CSS3的3D表单制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/458.html">
+    				http://www.w3cplus.com/demo/458.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					刘亚静
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>33</td>
+    			<td>CSS3制作卷角菜单</td>
+    			<td>CSS3制作卷角菜单教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/456.html">
+    				http://www.w3cplus.com/demo/456.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					郑晓婉
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>34</td>
+    			<td>CSS3制作时钟</td>
+    			<td>CSS3制作时钟教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/443.html">
+    				http://www.w3cplus.com/demo/443.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					李云龙
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>35</td>
+    			<td>css3动画&mdash;&mdash;垃圾桶</td>
+    			<td>css3动画&mdash;&mdash;垃圾桶的制作</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/442.html">
+    				http://www.w3cplus.com/demo/442.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					刘坤
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr bgcolor="#EEEEEE">
+    			<td>36</td>
+    			<td>一种css3 3D动画效果</td>
+    			<td>一种css3 3D动画效果的制作</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/422.html">
+    				http://www.w3cplus.com/demo/422.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					王威
+    				
+    			</td>
+    		</tr>
+    	
+    		<tr >
+    			<td>37</td>
+    			<td>纯css3列表切换动画</td>
+    			<td>纯css3列表切换动画的制作教程</td>
+    			<td>
+    				<a href="http://www.w3cplus.com/demo/416.html">
+    				http://www.w3cplus.com/demo/416.html
+    				</a>
+    			</td>
+    			<td style="text-align:center;">
+    				
+    				
+    					张肖
+    				
+    			</td>
+    		</tr>
+    	
+    </table>
+    </form>
+  
+<!-- 主页面内容 END -->
+	</TD>
+    <TD bgColor=#e6ee9c vAlign=top width=1 style="padding:0;"></TD>
+    <TD bgColor=#ffffff vAlign=top width=135>
+      <DIV align=right>
+      <P align=center><B><FONT color=#ff0000 size=3><BR>Welcome!</FONT></B></P>
+      <P align=center><B><FONT color=#ff0000><IMG height=100 src="./image/logo.jpg" width=100></FONT></B> </P>
+				<table style="width:100%;border:none;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+					<tbody><tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav1"><b><a href="/signin"><font color="#ff9c00">课堂点名</font></a></b></div></td>
+			</tr>
+					<tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav1"><b><a href="/count_signin"><font color="#ff9c00">考勤统计</font></a></b></div></td>
+			</tr>
+					<tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav1"><b><a href="/signin"><font color="#ffad00">座位管理</font></a></b></div></td>
+			</tr>
+					<tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav1"><b><a href="/signin"><font color="#ffad00">签到管理</font></a></b></div></td>
+			</tr>				
+					<tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav1"><b><a href="/homeworked"><font color="#ff9c00">提交作业</font></a></b></div></td>
+			</tr>
+					<tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav0 nav1"><b><a href="#"><font color="#ff9c00">作业统计</font></a></b></div></td>
+			</tr>
+					<tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav0 nav1"><b><a href="#"><font color="#ff9c00">平时成绩</font></a></b></div></td>
+			</tr>
+					<tr>
+						<td height="25" width="20%"></td>
+						<td><div align="center" class="nav1"><b><a href="/get_task"><font color="#ff5500">领取任务</font></a></b></div></td>
+			</tr>
+	
+			</tbody></table>
+	  </DIV>
+	</TD>
+  </TR>
+  <TR vAlign=top>
+    <TD colSpan=4 >
+      <DIV align=right style="border-top:1px solid #e6ee9c;">
+
+	  </DIV>
+      <DIV align=right>
+		  <DIV align=center style="height:40px;line-height:40px;">
+			<FONT color=#78909c face="Consolas,Arial, Helvetica, sans-serif" size=2>&copy;Copyright 2018-2019 All rights reserved.</FONT><FONT color=#3169a5> </FONT><BR>
+		  </DIV>
+	  </DIV>
+	</TD>
+  </TR>
+</TABLE>
+</body>
+</html>
+

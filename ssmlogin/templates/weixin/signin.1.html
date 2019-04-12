@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- saved from url=(0029)http://localhost:8080/signin/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="{% static 'signin/default.css'%}" rel="stylesheet" id="lhgdglink">
+
+
+<script type="text/javascript" src="{% static 'signin/lhgcore.lhgdialog.min.js"></script>
+<script type="text/javascript">
+	function openSigninDialog( rowIndex, colIndex ){
+//		alert(document.body.offsetWidth+"/"+document.body.offsetHeight);
+		document.getElementById('sbox_overlay').style.width=document.body.scrollWidth+"px";
+		document.getElementById('sbox_overlay').style.height=document.body.scrollHeight+"px";
+		document.getElementById('sbox_overlay').style.display='block';
+		
+		document.getElementById('sbox_window').style.display='block';
+		
+        form1.rowIndex.value=rowIndex;
+        form1.columnIndex.value=colIndex;	
+//$.dialog({title:'请登录：',
+//		  content: 'url:signin.jsp'});
+	}
+</script>
+
+<link rel="stylesheet" href="{% static 'signin/style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'signin/font-awesome.min.css' %}" type="text/css">
+
+
+<title>SSM在微信签到中的应用&gt;&gt; 签到页面</title>
+
+
+<style type="text/css">
+	body {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 12pt;
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+	}
+	p {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 12pt;
+	}
+	a:link {
+		color: #0000FF;
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		color: #FF0033;
+		text-decoration: none;
+	}
+	td {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 10pt;
+	}
+	.CompanyName {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 20pt;
+		color:#8d6e63;
+	}
+</style>
+</head>
+<body bgcolor="#ffffff"><div class="" style="display: none; visibility: hidden; position: absolute;"><table class="ui_border"><tbody><tr><td class="ui_lt"></td><td class="ui_t"></td><td class="ui_rt"></td></tr><tr><td class="ui_l"></td><td class="ui_c"><div class="ui_inner"><table class="ui_dialog"><tbody><tr><td colspan="2"><div class="ui_title_bar"><div class="ui_title" unselectable="on" style="cursor: move;"></div><div class="ui_title_buttons"><a class="ui_min" href="javascript:void(0);" title="最小化" style="display: inline-block;"><b class="ui_min_b"></b></a><a class="ui_max" href="javascript:void(0);" title="最大化" style="display: inline-block;"><b class="ui_max_b"></b></a><a class="ui_res" href="javascript:void(0);" title="还原"><b class="ui_res_b"></b><b class="ui_res_t"></b></a><a class="ui_close" href="javascript:void(0);" title="关闭(esc键)" style="display: inline-block;">×</a></div></div></td></tr><tr><td class="ui_icon" style="display: none;"><img src="http://localhost:8080/signin/" class="ui_icon_bg"></td><td class="ui_main" style="width: auto; height: auto;"><div class="ui_content" style="padding: 10px;"></div></td></tr><tr><td colspan="2"><div class="ui_buttons" style="display: none;"></div></td></tr></tbody></table></div></td><td class="ui_r"></td></tr><tr><td class="ui_lb"></td><td class="ui_b"></td><td class="ui_rb" style="cursor: se-resize;"></td></tr></tbody></table></div>
+
+<div align="center">
+
+<!-- 
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="80%">
+  <TR>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="3%">&nbsp;</TD>
+    <TD bgColor=#006500 width="2%">&nbsp;</TD>
+    <TD width="5%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD bgColor=#ce3000 width="2%">&nbsp;</TD>
+    <TD width="11%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="5%">&nbsp;</TD>
+    <TD bgColor=#ff9a00 width="2%">&nbsp;</TD>
+    <TD width="7%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="16%">&nbsp;</TD>
+    <TD bgColor=#00a200 width="2%">&nbsp;</TD>
+    <TD width="12%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="16%">&nbsp;</TD>
+    <TD bgColor=#006500 width="3%">&nbsp;</TD>
+  </TR>
+</TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="80%">
+  <TR>
+    <TD bgColor=#006600 height=13 rowSpan=2 width="19%">&nbsp;</TD>
+    <TD bgColor=#ce3000 rowSpan=2 width="8%">&nbsp;</TD>
+    <TD bgColor=#ff9900 height=13 rowSpan=2 width="15%">&nbsp;</TD>
+    <TD bgColor=#949231 height=13 rowSpan=2 width="14%">&nbsp;</TD>
+    <TD bgColor=#00a200 height=13 rowSpan=2 width="44%">&nbsp;</TD>
+  </TR>
+  <TR></TR>
+</TABLE> 
+-->
+
+<table style="border-bottom:1px solid #e6ee9c;width:80%;padding:0;border-collapse:collapse;border-spacing:0;">
+  <tbody><tr>
+    <td height="50"><div align="center" class="CompanyName"><b>Java系列课程签到</b></div></td>
+    <td valign="bottom"><div align="right"><b><font size="2" color="#f45">请点击头像签到</font></b></div></td>
+  </tr>
+</tbody></table>
+</div>
+<table style="width:80%;border:none;padding:0;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+  <tbody><tr>
+    <td colspan="2" valign="top" style="padding-top:20px; padding-bottom:20px;">
+<!-- 主页面内容 BEIN -->
+		
+
+<form name="form1" action="http://localhost:8080/signin/signin.action" method="post">
+<input type="hidden" name="rowIndex">
+<input type="hidden" name="columnIndex">
+<input type="hidden" name="isPost" value="1">
+
+<!-- 主页面内容 BEIN -->
+       	<table style="margin:0 auto;width:100%;">
+       		<tbody><tr>
+       			<td colspan="17" style="text-align:center;position:relative;">
+       				<a href="http://localhost:8080/signin/view.action;jsessionid=A545C7B9AFBF31E92955C7364A852C19">
+						<img border="0" src="{% static 'signin/teacher.jpg' %}" style="opacity:.8;">
+					</a>
+				</td>
+			</tr>
+       		
+        		<tr>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        			<td width="130">&nbsp;&nbsp;</td>	
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        				        			
+        			
+        		</tr>
+       		
+        		<tr>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        			<td width="130">&nbsp;&nbsp;</td>	
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        				        			
+        			
+        		</tr>
+       		
+        		<tr>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        			<td width="130">&nbsp;&nbsp;</td>	
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        				        			
+        			
+        		</tr>
+       		
+        		<tr>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        			<td width="130">&nbsp;&nbsp;</td>	
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        				        			
+        			
+        		</tr>
+       		
+        		<tr>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        			<td width="130">&nbsp;&nbsp;</td>	
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        				        			
+        			
+        		</tr>
+       		
+        		<tr>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>
+        					
+       						
+       						
+        				</td>
+        			
+        			<td width="130">&nbsp;&nbsp;</td>	
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        			
+        				<td>
+        					
+        						<img border="0" src="{% static 'signin/ban.png' %}" width="50" height="50" style="opacity:.6">
+        						        				
+       						
+       						
+        				</td>
+        				        			
+        			
+        		</tr>
+       		
+       		
+       		<tr>
+       			<td colspan="17" style="text-align:center;">
+       				<table style="width:10px;margin:0 auto;">
+       					<tbody><tr>
+	       				
+	       					<td>
+	       					<table style="width:60px;margin:0 auto;">
+	       						<tbody><tr><td>
+		       						<!--img border="0" src="./image/absent.gif" width="50" height="50"-->
+		       						<i class="icon-edit icon-4x" style="color: #dbdb42;"></i>
+		       					</td></tr>
+		       					<tr><td>
+		       						王永建
+		       					</td></tr>
+	       					</tbody></table>
+	       					</td>
+	       				
+	       					<td>
+	       					<table style="width:60px;margin:0 auto;">
+	       						<tbody><tr><td>
+		       						<!--img border="0" src="./image/absent.gif" width="50" height="50"-->
+		       						<i class="icon-edit icon-4x" style="color: #dbdb42;"></i>
+		       					</td></tr>
+		       					<tr><td>
+		       						罗兵兵
+		       					</td></tr>
+	       					</tbody></table>
+	       					</td>
+	       				
+       					</tr>
+       				</tbody></table>
+       			</td>
+       		</tr>
+       	</tbody></table>
+<!-- 主页面内容 END -->
+
+<!-- 输入姓名、学号对话框 BEIN -->
+<div id="sbox_overlay"></div>
+<div id="sbox_window1">
+	<table style="width:100%;margin:0 auto;text-align:center;">
+		<tbody><tr><td height="20"></td></tr>
+		<tr height="100" valign="middle">
+			<td valign="middle">
+				<font size="20">姓名：</font><script type="text/javascript">
+	function autoPopulate_name1(targetElement) {
+		targetElement.form.elements['name1'].value=targetElement.options[targetElement.selectedIndex].value;
+	}
+</script>
+<input type="text" name="name1" value="" id="name1" class="big_input"><br>
+<select onchange="autoPopulate_name1(this);" class="big_input">
+    <option value="---选择姓名---">---选择姓名---</option>
+    <option value="王舒蕾">王舒蕾</option>
+    <option value="刘坤">刘坤</option>
+    <option value="刘晓娟">刘晓娟</option>
+    <option value="何琳琳">何琳琳</option>
+    <option value="路越">路越</option>
+    <option value="王艳敬">王艳敬</option>
+    <option value="韩文瑾">韩文瑾</option>
+    <option value="张肖">张肖</option>
+    <option value="王清">王清</option>
+    <option value="王晖">王晖</option>
+    <option value="郑晓婉">郑晓婉</option>
+    <option value="刘亚静">刘亚静</option>
+    <option value="张如玉">张如玉</option>
+    <option value="王思媛">王思媛</option>
+    <option value="黄鹏程">黄鹏程</option>
+    <option value="胡泊">胡泊</option>
+    <option value="乔俊磊">乔俊磊</option>
+    <option value="罗兵兵">罗兵兵</option>
+    <option value="郑鹏涛">郑鹏涛</option>
+    <option value="刘白超">刘白超</option>
+    <option value="侯星宇">侯星宇</option>
+    <option value="温朴源">温朴源</option>
+    <option value="陈高升">陈高升</option>
+    <option value="刘超超">刘超超</option>
+    <option value="陈歆宇">陈歆宇</option>
+    <option value="王永建">王永建</option>
+    <option value="陈家辉">陈家辉</option>
+    <option value="于富江">于富江</option>
+    <option value="申明可">申明可</option>
+    <option value="陈超">陈超</option>
+    <option value="王威">王威</option>
+    <option value="高俊凯">高俊凯</option>
+    <option value="高畅">高畅</option>
+    <option value="王可">王可</option>
+    <option value="陈硕">陈硕</option>
+    <option value="代继强">代继强</option>
+    <option value="李云龙">李云龙</option>
+</select>
+
+			</td>
+		</tr>
+		<tr><td height="60"></td></tr>
+		<tr height="100" valign="middle">
+			<td valign="middle">
+				<font size="20">学号：</font><script type="text/javascript">
+	function autoPopulate_studentNo1(targetElement) {
+		targetElement.form.elements['studentNo1'].value=targetElement.options[targetElement.selectedIndex].value;
+	}
+</script>
+<input type="text" name="studentNo1" value="" id="studentNo1" class="big_input"><br>
+<select onchange="autoPopulate_studentNo1(this);" class="big_input">
+    <option value="---选择学号---">---选择学号---</option>
+    <option value="131164336">131164336</option>
+    <option value="131164450">131164450</option>
+    <option value="131164501">131164501</option>
+    <option value="131164503">131164503</option>
+    <option value="131164504">131164504</option>
+    <option value="131164505">131164505</option>
+    <option value="131164506">131164506</option>
+    <option value="131164507">131164507</option>
+    <option value="131164508">131164508</option>
+    <option value="131164509">131164509</option>
+    <option value="131164510">131164510</option>
+    <option value="131164511">131164511</option>
+    <option value="131164512">131164512</option>
+    <option value="131164513">131164513</option>
+    <option value="131164527">131164527</option>
+    <option value="131164528">131164528</option>
+    <option value="131164529">131164529</option>
+    <option value="131164530">131164530</option>
+    <option value="131164531">131164531</option>
+    <option value="131164532">131164532</option>
+    <option value="131164533">131164533</option>
+    <option value="131164534">131164534</option>
+    <option value="131164535">131164535</option>
+    <option value="131164536">131164536</option>
+    <option value="131164537">131164537</option>
+    <option value="131164538">131164538</option>
+    <option value="131164539">131164539</option>
+    <option value="131164540">131164540</option>
+    <option value="131164541">131164541</option>
+    <option value="131164542">131164542</option>
+    <option value="131164544">131164544</option>
+    <option value="131164545">131164545</option>
+    <option value="131164546">131164546</option>
+    <option value="131164548">131164548</option>
+    <option value="131164549">131164549</option>
+    <option value="131164550">131164550</option>
+    <option value="131164551">131164551</option>
+</select>
+
+			</td>
+		</tr>
+		<tr><td height="20"></td></tr>
+		<tr height="100" align="center">
+			<td>
+				<input class="big_input" style="letter-spacing: 1em;padding: 30px auto;width: 300px;font-size:30px;" type="submit" value="确定">
+			</td>
+		</tr>
+	</tbody></table>		
+	<a id="sbox_btn_close" href="http://localhost:8080/signin/#" onclick="document.getElementById(&#39;sbox_overlay&#39;).style.display=&#39;none&#39;;
+											 document.getElementById(&#39;sbox_window&#39;).style.display=&#39;none&#39;;">
+	</a>
+</div>
+<!-- 输入姓名、学号对话框 END -->
+
+<!-- 输入错误对话框 BEIN -->
+
+<!-- 输入错误对话框 END -->
+
+</form>
+
+<!-- 主页面内容 END -->
+	</td>
+    <td bgcolor="#e6ee9c" valign="top" width="1" style="padding:0;"></td>
+    <td bgcolor="#ffffff" valign="top" width="135">
+      <div align="right">
+      <p align="center"><b><font color="#ff0000" size="3"><br>Welcome!</font></b></p>
+      <p align="center"><b><font color="#ff0000"><img height="100" src="{% static 'signin/logo.jpg' %}" width="100"></font></b> </p>
+      <table style="width:100%;border:none;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+        <tbody><tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/signin"><font color="#ff9c00">课堂点名</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/count_signin"><font color="#ff9c00">考勤统计</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/signin"><font color="#ffad00">座位管理</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/signin"><font color="#ffad00">签到管理</font></a></b></div></td>
+		</tr>				
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/homeworked"><font color="#ff9c00">提交作业</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav0 nav1"><b><a href="#"><font color="#ff9c00">作业统计</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav0 nav1"><b><a href="#"><font color="#ff9c00">平时成绩</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/get_task"><font color="#ff5500">领取任务</font></a></b></div></td>
+		</tr>
+
+	  </tbody></table>
+	  </div>
+	</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="4">
+      <div align="right" style="border-top:1px solid #e6ee9c;">
+
+	  </div>
+      <div align="right">
+		  <div align="center" style="height:40px;line-height:40px;">
+			<font color="#78909c" face="Consolas,Arial, Helvetica, sans-serif" size="2">©Copyright 2018-2019 All rights reserved.</font><font color="#3169a5"> </font><br>
+		  </div>
+	  </div>
+	</td>
+  </tr>
+</tbody></table>
+
+
+
+</body></html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- saved from url=(0029)http://localhost:8080/signin/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="{% static 'signin/default.css'%}" rel="stylesheet" id="lhgdglink">
+
+
+<script type="text/javascript" src="{% static 'signin/lhgcore.lhgdialog.min.js"></script>
+<script type="text/javascript">
+	function openSigninDialog( rowIndex, colIndex ){
+//		alert(document.body.offsetWidth+"/"+document.body.offsetHeight);
+		document.getElementById('sbox_overlay').style.width=document.body.scrollWidth+"px";
+		document.getElementById('sbox_overlay').style.height=document.body.scrollHeight+"px";
+		document.getElementById('sbox_overlay').style.display='block';
+		
+		document.getElementById('sbox_window').style.display='block';
+		
+        form1.rowIndex.value=rowIndex;
+        form1.columnIndex.value=colIndex;	
+//$.dialog({title:'请登录：',
+//		  content: 'url:signin.jsp'});
+	}
+</script>
+
+<link rel="stylesheet" href="{% static 'signin/style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'signin/font-awesome.min.css' %}" type="text/css">
+
+
+<title>SSM在微信签到中的应用&gt;&gt; 签到页面</title>
+
+
+<style type="text/css">
+	body {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 12pt;
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+	}
+	p {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 12pt;
+	}
+	a:link {
+		color: #0000FF;
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		color: #FF0033;
+		text-decoration: none;
+	}
+	td {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 10pt;
+	}
+	.CompanyName {
+		font-family: "Microsoft YaHei", "Verdana", "Arial", "Helvetica","sans-serif";
+		font-size: 20pt;
+		color:#8d6e63;
+	}
+</style>
+</head>
+<body bgcolor="#ffffff"><div class="" style="display: none; visibility: hidden; position: absolute;"><table class="ui_border"><tbody><tr><td class="ui_lt"></td><td class="ui_t"></td><td class="ui_rt"></td></tr><tr><td class="ui_l"></td><td class="ui_c"><div class="ui_inner"><table class="ui_dialog"><tbody><tr><td colspan="2"><div class="ui_title_bar"><div class="ui_title" unselectable="on" style="cursor: move;"></div><div class="ui_title_buttons"><a class="ui_min" href="javascript:void(0);" title="最小化" style="display: inline-block;"><b class="ui_min_b"></b></a><a class="ui_max" href="javascript:void(0);" title="最大化" style="display: inline-block;"><b class="ui_max_b"></b></a><a class="ui_res" href="javascript:void(0);" title="还原"><b class="ui_res_b"></b><b class="ui_res_t"></b></a><a class="ui_close" href="javascript:void(0);" title="关闭(esc键)" style="display: inline-block;">×</a></div></div></td></tr><tr><td class="ui_icon" style="display: none;"><img src="http://localhost:8080/signin/" class="ui_icon_bg"></td><td class="ui_main" style="width: auto; height: auto;"><div class="ui_content" style="padding: 10px;"></div></td></tr><tr><td colspan="2"><div class="ui_buttons" style="display: none;"></div></td></tr></tbody></table></div></td><td class="ui_r"></td></tr><tr><td class="ui_lb"></td><td class="ui_b"></td><td class="ui_rb" style="cursor: se-resize;"></td></tr></tbody></table></div>
+
+<div align="center">
+
+<!-- 
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="80%">
+  <TR>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="3%">&nbsp;</TD>
+    <TD bgColor=#006500 width="2%">&nbsp;</TD>
+    <TD width="5%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD bgColor=#ce3000 width="2%">&nbsp;</TD>
+    <TD width="11%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="5%">&nbsp;</TD>
+    <TD bgColor=#ff9a00 width="2%">&nbsp;</TD>
+    <TD width="7%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="16%">&nbsp;</TD>
+    <TD bgColor=#00a200 width="2%">&nbsp;</TD>
+    <TD width="12%">&nbsp;</TD>
+    <TD width="2%">&nbsp;</TD>
+    <TD width="16%">&nbsp;</TD>
+    <TD bgColor=#006500 width="3%">&nbsp;</TD>
+  </TR>
+</TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="80%">
+  <TR>
+    <TD bgColor=#006600 height=13 rowSpan=2 width="19%">&nbsp;</TD>
+    <TD bgColor=#ce3000 rowSpan=2 width="8%">&nbsp;</TD>
+    <TD bgColor=#ff9900 height=13 rowSpan=2 width="15%">&nbsp;</TD>
+    <TD bgColor=#949231 height=13 rowSpan=2 width="14%">&nbsp;</TD>
+    <TD bgColor=#00a200 height=13 rowSpan=2 width="44%">&nbsp;</TD>
+  </TR>
+  <TR></TR>
+</TABLE> 
+-->
+
+<table style="border-bottom:1px solid #e6ee9c;width:80%;padding:0;border-collapse:collapse;border-spacing:0;">
+  <tbody><tr>
+    <td height="50"><div align="center" class="CompanyName"><b>SSM在微信签到中的应用</b></div></td>
+    <td valign="bottom"><div align="right"><b><font size="2" color="#f45">请点击头像签到{{ boldmessage }}</font></b></div></td>
+  </tr>
+</tbody></table>
+</div>
+<table style="width:80%;border:none;padding:0;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+  <tbody><tr>
+    <td colspan="2" valign="top" style="padding-top:20px; padding-bottom:20px;">
+<!-- 主页面内容 BEIN -->
+		
+
+<form name="form1" action="http://localhost:8080/signin/signin.action" method="post">
+<input type="hidden" name="rowIndex">
+<input type="hidden" name="columnIndex">
+<input type="hidden" name="isPost" value="1">
+
+<!-- 主页面内容 BEIN -->
+       	<table style="margin:0 auto;width:100%;">
+       		<tbody><tr>
+       			<td colspan="17" style="text-align:center;position:relative;">
+       				<a href="http://localhost:8080/signin/view.action;jsessionid=A545C7B9AFBF31E92955C7364A852C19">
+						<img border="0" src="{% static 'signin/teacher.jpg' %}" style="opacity:.8;">
+					</a>
+				</td>
+			</tr>
+			
+					 
+					 
+        		<tr>
+							{% for i in L %}
+        				<td>
+        						<img border="0" src="{% static 'signin/online.jpg' %}" width="50" height="50" style="opacity:.6">
+        						<br>
+        						<label>&nbsp;</label>       						
+								</td>
+								{% endfor %}
+        			<td width="130">&nbsp;&nbsp;</td>	        			
+        		</tr>
+       
+       		
+       		
+       		<tr>
+       			<td colspan="17" style="text-align:center;">
+       				<table style="width:10px;margin:0 auto;">
+       					<tbody><tr>
+	       				
+	       					<td>
+	       					<table style="width:60px;margin:0 auto;">
+	       						<tbody><tr><td>
+		       						<!--img border="0" src="./image/absent.gif" width="50" height="50"-->
+		       						<i class="icon-edit icon-4x" style="color: #dbdb42;"></i>
+		       					</td></tr>
+		       					<tr><td>
+		       						王永建
+		       					</td></tr>
+	       					</tbody></table>
+	       					</td>
+	       				
+	       					<td>
+	       					<table style="width:60px;margin:0 auto;">
+	       						<tbody><tr><td>
+		       						<!--img border="0" src="./image/absent.gif" width="50" height="50"-->
+		       						<i class="icon-edit icon-4x" style="color: #dbdb42;"></i>
+		       					</td></tr>
+		       					<tr><td>
+		       						罗兵兵
+		       					</td></tr>
+	       					</tbody></table>
+	       					</td>
+	       				
+       					</tr>
+       				</tbody></table>
+       			</td>
+       		</tr>
+       	</tbody></table>
+<!-- 主页面内容 END -->
+
+<!-- 输入姓名、学号对话框 BEIN -->
+<div id="sbox_overlay"></div>
+
+<!-- 输入姓名、学号对话框 END -->
+
+<!-- 输入错误对话框 BEIN -->
+
+<!-- 输入错误对话框 END -->
+
+</form>
+
+<!-- 主页面内容 END -->
+	</td>
+    <td bgcolor="#e6ee9c" valign="top" width="1" style="padding:0;"></td>
+    <td bgcolor="#ffffff" valign="top" width="135">
+      <div align="right">
+      <p align="center"><b><font color="#ff0000" size="3"><br>Welcome!</font></b></p>
+      <p align="center"><b><font color="#ff0000"><img height="100" src="{% static 'signin/logo.jpg' %}" width="100"></font></b> </p>
+      <table style="width:100%;border:none;margin:0 auto;border-collapse:collapse;border-spacing:0;">
+        <tbody><tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/signin"><font color="#ff9c00">课堂点名</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/count_signin"><font color="#ff9c00">考勤统计</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/signin"><font color="#ffad00">座位管理</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/signin"><font color="#ffad00">签到管理</font></a></b></div></td>
+		</tr>				
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/homeworked"><font color="#ff9c00">提交作业</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav0 nav1"><b><a href="#"><font color="#ff9c00">作业统计</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav0 nav1"><b><a href="#"><font color="#ff9c00">平时成绩</font></a></b></div></td>
+		</tr>
+        <tr>
+          <td height="25" width="20%"></td>
+          <td><div align="center" class="nav1"><b><a href="/get_task"><font color="#ff5500">领取任务</font></a></b></div></td>
+		</tr>
+
+	  </tbody></table>
+	  </div>
+	</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="4">
+      <div align="right" style="border-top:1px solid #e6ee9c;">
+
+	  </div>
+      <div align="right">
+		  <div align="center" style="height:40px;line-height:40px;">
+			<font color="#78909c" face="Consolas,Arial, Helvetica, sans-serif" size="2">©Copyright 2018-2019 All rights reserved.</font><font color="#3169a5"> </font><br>
+		  </div>
+	  </div>
+	</td>
+  </tr>
+</tbody></table>
+
+
+
+</body></html>
