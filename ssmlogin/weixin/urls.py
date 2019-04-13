@@ -27,5 +27,14 @@ urlpatterns = [
     path('homeworked/', views.homeworked),
     path('count_signin/', views.count_signin),
     path('add_student/', views.add_Student),
+    path('<int:student_id>/add_homework/', views.add_homework,name = 'add_homework'),
+    path('<int:student_id>/', views.detail,name='detail'),
     path('login/', views.login,name='login'),
+
 ]
+
+#TODO
+"""
+这里的name的作用
+name = 'login'   作用
+"""

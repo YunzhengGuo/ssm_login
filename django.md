@@ -99,3 +99,4 @@ pip install django-grappelli
 pip install django-markdown
 ```
 
+加admin

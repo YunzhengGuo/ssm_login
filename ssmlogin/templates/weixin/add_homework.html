@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ 
+    {% for student in student_list %}
+
+    <a class="nav-link" href="{% url 'weixin:detail' student.id %}">
+        {{ student.name}}
+        <span class="badge badge-pill  badge-primary align-text-bottom"></span>
+    </a>
+   
+    {% endfor %}   
+
+
+<form action="{% url 'weixin:add_homework' student.id %}" method="POST" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    {{ student.name}}
+    {% include 'weixin/base_form.html' %}
+    <input type="submit" value="提交" class="btn-lg btn-secondary  btn-block">
+</form>
+<table width="80%" class="mytable" border="1px">
+    <thead>
+     
+        {% for i in homework_list %}
+        <tr>
+            <th>{{ i.id  }}</th>
+            <th>{{ i.name }}</th>
+            <th>{{ i.homework_name }}</th>
+            <th>{{ i.path  }}</th>
+            <th>{{ i.time }}</th>
+          </tr>
+        {% endfor %}
+    </thead>
+
+  </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

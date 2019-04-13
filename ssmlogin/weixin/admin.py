@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Student, Tlogin
+from .models import Student, Tlogin, homework
 
 
 class StudentAdmin(admin.ModelAdmin):
@@ -22,3 +22,11 @@ class TloginAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Tlogin, TloginAdmin)
+class homeworkAdmin(admin.ModelAdmin):
+    list_display = ('stu_id', 'name',  'homework_name','path','time')
+    list_filter = ('stu_id', 'name',  'homework_name','path','time')
+    search_fields =('stu_id', 'name',  'homework_name','path','time')
+    list_per_page = 10
+
+
+admin.site.register(homework, homeworkAdmin)

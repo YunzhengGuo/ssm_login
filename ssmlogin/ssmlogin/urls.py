@@ -23,7 +23,7 @@ urlpatterns = [
     # path('signin/', views.signin),
     # path('', views.signin),
     path('', include('weixin.urls')),
-    path('weixin/', include('weixin.urls')),
+    # path('weixin/', include('weixin.urls')),
     # path('get_task/', views.get_task),
     # path('homeworked/', views.homeworked),
     # path('count_signin/', views.count_signin),

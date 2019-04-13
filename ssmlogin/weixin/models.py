@@ -20,7 +20,7 @@ class Student(models.Model):
 class Tlogin(models.Model):
     id = models.IntegerField('座位号',auto_created=True,primary_key=True)
     pub_date = models.DateTimeField('签到时间',auto_now_add=True)
-    stu_id = models.ForeignKey(Student, on_delete=models.CASCADE,verbose_name='学生学号',unique=True)
+    stu_id = models.ForeignKey(Student, on_delete=models.CASCADE,verbose_name='学生学号')
     # name = models.ForeignKey(Student, on_delete=models.CASCADE,verbose_name='学生姓名')
        
    
@@ -30,3 +30,15 @@ class Tlogin(models.Model):
     class Meta:
         verbose_name = '签到表'
         verbose_name_plural = '签到信息表'
+
+
+class homework(models.Model):
+
+    id = models.ForeignKey(Student, on_delete=models.CASCADE,verbose_name='学生学号')
+    name= models.CharField("学生姓名",max_length=50)
+    homework_name = models.CharField("作业名",max_length=50)
+    path = models.CharField("上传路径",max_length=50)
+    time = models.DateTimeField('上传时间',auto_now_add=True)
+    class Meta:
+        verbose_name = '提交作业表'
+        verbose_name_plural = '提交作业表'
